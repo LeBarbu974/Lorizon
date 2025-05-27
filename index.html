@@ -76,3 +76,261 @@
       align-items: center;
       text-align: center;
       cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.2em;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .choice:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.2);
+    }
+
+    .love {
+      color: #d13a6f;
+      border: 3px solid #d13a6f;
+    }
+
+    .hot {
+      background-color: #2b2b4f;
+      color: #fff;
+      border: 3px solid #d13a6f;
+    }
+
+    .choice h2 {
+      margin: 0 0 0.4em 0;
+      font-size: 1.6em;
+      font-weight: 600;
+    }
+
+    .choice p {
+      font-size: 1.05em;
+      line-height: 1.4em;
+      margin: 0;
+      padding: 0 0.5em;
+    }
+
+    .abonnement-container {
+      max-width: 800px;
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 14px;
+      padding: 2em 2.5em;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 3em;
+      text-align: center;
+    }
+
+    .abonnement-container h2 {
+      font-size: 2em;
+      margin-bottom: 0.3em;
+      color: #d13a6f;
+      font-weight: 600;
+    }
+
+    .offre-speciale {
+      font-style: italic;
+      color: #444;
+      margin-bottom: 1.5em;
+      font-weight: 500;
+    }
+
+    .abonnement-grid {
+      display: flex;
+      gap: 2.5em;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .abonnement-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.8em 2em;
+      box-shadow: 0 0 15px #d13a6f44;
+      width: 320px;
+      color: #444;
+      text-align: left;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .abonnement-card:hover {
+      box-shadow: 0 0 25px #d13a6fbb;
+    }
+
+    .abonnement-card h3 {
+      color: #d13a6f;
+      margin-top: 0;
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+
+    .abonnement-card p {
+      font-weight: 600;
+      font-size: 1.2em;
+      margin-bottom: 1em;
+      color: #222;
+    }
+
+    .abonnement-card ul {
+      margin: 0;
+      padding-left: 1.3em;
+      list-style-type: disc;
+      font-size: 1em;
+      line-height: 1.4em;
+      color: #555;
+    }
+
+    .btn-abonnement {
+      margin-top: 1.3em;
+      padding: 0.7em 1.6em;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #d13a6f;
+      color: white;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-abonnement:hover {
+      background-color: #b02d5c;
+    }
+
+    /* Popup +18 ans */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: #fff;
+    }
+
+    .popup-content {
+      background-color: #2a2a2a;
+      padding: 2.5em 3em;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 420px;
+    }
+
+    .popup-content h2 {
+      margin-bottom: 0.6em;
+      font-weight: 700;
+      font-size: 1.7em;
+      color: #d13a6f;
+    }
+
+    .popup-content p {
+      margin-bottom: 1.2em;
+      font-size: 1.1em;
+      line-height: 1.4em;
+    }
+
+    .popup-content button {
+      margin: 0 0.5em;
+      padding: 0.8em 1.6em;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .popup-content button.confirm {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .popup-content button.cancel {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .choice-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .choice {
+        width: 90%;
+        height: auto;
+        padding: 1.5em;
+      }
+      .abonnement-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .abonnement-card {
+        width: 90%;
+        margin-bottom: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup-overlay" id="age-popup">
+    <div class="popup-content">
+      <h2>🔞 Contenu réservé aux adultes</h2>
+      <p>Ce site contient du contenu à caractère sexuel explicite.<br>En cliquant sur “J’ai +18 ans”, vous confirmez être majeur.</p>
+      <button class="confirm" onclick="enterSite()">✅ J’ai +18 ans</button>
+      <button class="cancel" onclick="window.location.href='https://www.google.com'">🚫 Quitter</button>
+    </div>
+  </div>
+
+  <div class="logo">Lorizon</div>
+  <div class="slogan">Rencontrez l’amour ou l’instant… juste à Lorizon.</div>
+
+  <div class="avertissement-18">
+    🔞 Ce site contient du contenu réservé à un public majeur (+18). En accédant, vous confirmez être majeur et acceptez de naviguer sur une plateforme pour adultes.
+  </div>
+
+  <div class="choice-container">
+    <div class="choice love" onclick="location.href='coeur.html'">
+      <h2>💖 Lorizon Cœur</h2>
+      <p>Pour ceux qui cherchent une relation vraie, durable et sincère.</p>
+    </div>
+    <div class="choice hot" onclick="location.href='hot.html'">
+      <h2>🔥 Lorizon Hot</h2>
+      <p>Pour des rencontres hard, sans lendemain.</p>
+    </div>
+  </div>
+
+  <div class="abonnement-container">
+    <h2>Nos abonnements</h2>
+    <p class="offre-speciale">
+      🎁 <strong>Offre spéciale :</strong> le 1<sup>er</sup> mois est <u>offert gratuitement</u> aux 100 premiers hommes inscrits.<br>
+      Ensuite, profitez de nos abonnements à partir de 9,90 € / mois pour Lorizon Cœur et 19,90 € / mois pour Lorizon Hot.
+    </p>
+    <div class="abonnement-grid">
+      <div
+class="abonnement-card">
+<h3>Lorizon Cœur</h3>
+<p>9,90 € / mois</p>
+<ul>
+<li>Accès aux profils sérieux</li>
+<li>Messagerie illimitée</li>
+<li>Support prioritaire</li>
+</ul>
+<button class="btn-abonnement">S’abonner</button>
+</div>
+<div class="abonnement-card">
+<h3>Lorizon Hot</h3>
+<p>19,90 € / mois</p>
+<ul>
+<li>Accès aux profils libertins</li>
+<li>Fonctions anonymes</li>
+<li>Discussions hot illimitées</li>
+</ul>
+<button class="btn-abonnement">S’abonner</button>
+</div>
+</div>
+
+</div> <script> function enterSite() { document.getElementById("age-popup").style.display = "none"; } // Afficher le popup après 0.5s window.onload = function() { setTimeout(() => { document.getElementById("age-popup").style.display = "flex"; }, 500); }; </script> </body> </html> ```
