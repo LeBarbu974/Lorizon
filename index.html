@@ -1,51 +1,11 @@
-index.html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lorizon - Accueil</title>
-  <style>.avertissement-18 {
-  background-color: #ffeaea;
-  color: #a50000;
-  text-align: center;
-  padding: 1em;
-  font-size: 1em;
-  border-bottom: 2px solid #a50000;
-  font-weight: bold;
-}
-
-    <div class="avertissement-18">
-  <p>
-    🔞 Ce site contient du contenu réservé à un public majeur (+18).<br>
-    En accédant, vous confirmez être majeur et acceptez de naviguer sur une plateforme pour adultes.
-  </p>
-</div>
-
-   <script>
-  function enterSite() {
-    document.getElementById('age-popup').style.display = 'none';
-    localStorage.setItem('ageVerified', 'true');
-  }
-
-  window.onload = function () {
-    if (localStorage.getItem('ageVerified') !== 'true') {
-      document.getElementById('age-popup').style.display = 'flex';
-    } else {
-      document.getElementById('age-popup').style.display = 'none';
-    }
-  };
-</script>
- body <div id="age-popup" class="popup-overlay">
-  <div class="popup-content">
-    <h2>🔞 Contenu réservé aux adultes</h2>
-    <p>Ce site contient du contenu à caractère sexuel explicite.</p>
-    <p>En cliquant sur “J’ai +18 ans”, vous confirmez être majeur.</p>
-    <button onclick="enterSite()">✅ J’ai +18 ans</button>
-    <button onclick="window.location.href='https://www.google.com'">🚫 Quitter</button>
-  </div>
-</div>
-{
+  <style>
+    body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
@@ -53,9 +13,10 @@ index.html
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
       color: #333;
+      padding: 2em 1em;
     }
 
     .logo {
@@ -68,6 +29,8 @@ index.html
       font-size: 1.2em;
       margin-bottom: 2em;
       color: #666;
+      text-align: center;
+      max-width: 600px;
     }
 
     .choice-container {
@@ -75,40 +38,8 @@ index.html
       gap: 2em;
       flex-wrap: wrap;
       justify-content: center;
+      margin-bottom: 3em;
     }
-<div class="abonnement-container">
-  <h2>Nos abonnements</h2>
-
-  <p style="font-style: italic; color: #444; margin-top: -0.5em;">
-    🎁 <strong>Offre spéciale :</strong> le 1<sup>er</sup> mois est offert aux 100 premiers hommes inscrits !
-  </p>
-
-  <div class="abonnement-grid">
-    
-    <div class="abonnement-card abonnement-coeur">
-      <h3>Lorizon Love</h3>
-      <p><strong>À partir de 9,90 € / mois</strong></p>
-      <ul>
-        <li>Rencontres sincères et durables</li>
-        <li>Messagerie illimitée</li>
-        <li>Suggestions personnalisées</li>
-        <li>Événements exclusifs pour membres</li>
-      </ul>
-    </div>
-
-  <div class="abonnement-card abonnement-nuit">
-  <h3>Lorizon Hot</h3>
-  <p><strong>À partir de 19,90 € / mois</strong></p>
-  <ul>
-    <li>Rencontres 100% adultes & sans tabou</li>
-    <li>Accès à tous les profils</li>
-    <li>Chat instantané illimité</li>
-    <li>Choix : Anal, Plan à trois, Candaulisme</li>
-    <li>+ Voyeurisme, BDSM et autres fantasmes</li>
-  </ul>
-  <button onclick="location.href='hot.html'" class="btn-abonnement nuit-btn">Je m’abonne</button>
-</div>
-
 
     .choice {
       width: 250px;
@@ -147,141 +78,163 @@ index.html
       margin-top: 0.5em;
       font-size: 1em;
       padding: 0 1em;
-    }<div class="abonnement-container">
-  <h2>Nos abonnements</h2>
-  <div class="abonnement-grid">
-    
-    <div class="abonnement-card abonnement-coeur">
-      <h3>Lorizon Love</h3>
-      <p><strong>À partir de 9,90 € / mois</strong></p>
-      <ul>
-        <li>Rencontres sincères et durables</li>
-        <li>Messagerie illimitée</li>
-        <li>Suggestions personnalisées</li>
-        <li>Événements exclusifs pour membres</li>
-      </ul>
-    </div>
+    }
 
-    <div class="abonnement-card abonnement-nuit">
-      <h3>Lorizon Hot</h3>
-      <p><strong>À partir de 19,90 € / mois</strong></p>
-      <ul>
-        <li>Rencontres locales spontanées</li>
-        <li>Accès à tous les profils</li>
-        <li>Chat instantané illimité</li>
-        <li>Bonus exclusifs et surprises</li>
-      </ul>
-    </div>
+    /* Abonnement */
+    .abonnement-container {
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
 
-  </div>
-</div>
+    .abonnement-container h2 {
+      margin-bottom: 0.5em;
+    }
 
+    .offre-speciale {
+      font-style: italic;
+      color: #444;
+      margin-bottom: 1.5em;
+    }
+
+    .abonnement-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+
+    .abonnement-card {
+      border-radius: 12px;
+      padding: 1.5em;
+      width: 300px;
+      text-align: left;
+    }
+
+    .abonnement-love {
+      background: #ffeef2;
+      color: #d13a6f;
+    }
+
+    .abonnement-hot {
+      background: #2b2b4f;
+      color: #fff;
+    }
+
+    .abonnement-card ul {
+      padding-left: 1.2em;
+      margin-top: 0.8em;
+    }
+
+    .abonnement-card ul li {
+      margin-bottom: 0.5em;
+    }
+
+    .btn-abonnement {
+      margin-top: 1em;
+      padding: 0.7em 1.5em;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #d13a6f;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-abonnement:hover {
+      background-color: #b02d5c;
+    }
+
+    .hot .btn-abonnement {
+      background-color: #ffffff22;
+      border: 1px solid #fff;
+      color: white;
+    }
+
+    .hot .btn-abonnement:hover {
+      background-color: #ffffff44;
+    }
+
+    /* Popup 18+ */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: #fff;
+      flex-direction: column;
+      padding: 2em;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    .popup-content {
+      background-color: #2a2a2a;
+      padding: 2em;
+      border-radius: 12px;
+      max-width: 400px;
+    }
+
+    .popup-content h2 {
+      margin-bottom: 0.5em;
+    }
+
+    .popup-content button {
+      margin: 0.5em;
+      padding: 0.6em 1.2em;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .popup-content button.confirm {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .popup-content button.cancel {
+      background-color: #dc3545;
+      color: white;
+    }
 
     @media (max-width: 600px) {
-      .choice {
+      .choice, .abonnement-card {
         width: 90%;
         margin-bottom: 1em;
       }
+
+      .abonnement-grid {
+        flex-direction: column;
+        align-items: center;
+      }
     }
-  </style>.popup-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  color: #fff;
-}
-
-.popup-content {
-  background-color: #2a2a2a;
-  padding: 2em;
-  border-radius: 12px;
-  text-align: center;
-  max-width: 400px;
-}
-
-.popup-content h2 {
-  margin-bottom: 0.5em;
-}
-
-.popup-content button {
-  margin: 0.5em;
-  padding: 0.6em 1.2em;
-  border: none;
-  border-radius: 6px;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-.popup-content button:first-of-type {
-  background-color: #28a745;
-  color: white;
-}
-
-.popup-content button:last-of-type {
-  background-color: #dc3545;
-  color: white;
-}
-.btn-abonnement {
-  margin-top: 1em;
-  padding: 0.7em 1.5em;
-  font-size: 1em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #d13a6f;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.btn-abonnement:hover {
-  background-color: #b02d5c;
-}
-
-.nuit-btn {
-  background-color: #ffffff22;
-  border: 1px solid #fff;
-}
-
-.nuit-btn:hover {
-  background-color: #ffffff44;
-}
-
+  </style>
 </head>
 <body>
+
+  <!-- Popup 18+ -->
+  <div id="age-popup" class="popup-overlay" style="display:none;">
+    <div class="popup-content">
+      <h2>🔞 Contenu réservé aux adultes</h2>
+      <p>Ce site contient du contenu à caractère sexuel explicite.</p>
+      <p>En cliquant sur “J’ai +18 ans”, vous confirmez être majeur.</p>
+      <button class="confirm" onclick="enterSite()">✅ J’ai +18 ans</button>
+      <button class="cancel" onclick="window.location.href='https://www.google.com'">🚫 Quitter</button>
+    </div>
+  </div>
+
   <div class="logo">Lorizon</div>
   <div class="slogan">Rencontrez l’amour ou l’instant… juste à Lorizon.</div>
 
-  <div class="choice-container"><!-- Ajoute ce code juste après la div .choice-container dans ton fichier index.html -->
-
-<div class="abonnement-container" style="margin-top: 3em; text-align: center; max-width: 700px;">
-  <h2>Nos abonnements</h2>
-  <div style="display: flex; justify-content: center; gap: 2em; flex-wrap: wrap; margin-top: 1em;">
-    
-    <div style="background:#ffeef2; color:#d13a6f; padding: 1.5em; border-radius: 12px; width: 300px;">
-      <h3>Lorizon Cœur</h3>
-      <p><strong>À partir de 9,90 € / mois</strong></p>
-      <ul style="text-align: left;">
-        <li>Rencontre vraie et durable</li>
-        <li>Messagerie illimitée</li>
-        <li>Suggestions personnalisées</li>
-        <li>Accès à des événements exclusifs</li>
-      </ul>
+  <div class="choice-container">
+    <div class="choice love" onclick="location.href='coeur.html'">
+      <h2>💖 Lorizon Cœur</h2>
+      <p>Pour ceux qui cherchent une relation vraie, durable et sincère.</p>
     </div>
-
-    <div style="background:#2b2b4f; color:#fff; padding: 1.5em; border-radius: 12px; width: 300px;">
-      <h3>Lorizon Nuit</h3>
-      <p><strong>À partir de 19,90 € / mois</strong></p>
-      <ul style="text-align: left;">
-        <li>Rencontres locales spontanées</li>
-        <li>Accès illimité aux profils</li>
-        <li>Chat instantané</li>
-        <li>Bonus exclusifs & cadeaux</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
+    <div c
