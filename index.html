@@ -5,123 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lorizon - Accueil</title>
 
-  <!-- Google Fonts Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- Police moderne Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* Reset & base */
-    body, html {
-      margin: 0; padding: 0; height: 100%;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 1.5;
-      color: #333;
-      overflow-x: hidden;
-    }
-
-    /* Background slideshow (La Réunion paysages) */
     body {
-      background: url('images/reunion1.jpg') no-repeat center center fixed;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      color: #333;
+      background: url('fond1.jpg') no-repeat center center fixed;
       background-size: cover;
-      transition: background-image 1s ease-in-out;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      min-height: 100vh;
-      padding: 3em 1em 4em;
-      position: relative;
-    }
-
-    /* Overlay sombre pour lisibilité */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.45);
-      z-index: 0;
-    }
-
-    /* Contenu devant l'overlay */
-    .content-wrapper {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      width: 100%;
-      text-align: center;
-      color: #fff;
-      user-select: none;
+      padding-top: 3em;
+      backdrop-filter: brightness(0.85);
     }
 
     .logo {
-      font-size: 3.5em;
+      font-size: 3em;
       font-weight: 600;
-      margin-bottom: 0.3em;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      margin-bottom: 0.1em;
+      color: #d13a6f;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
     }
 
     .slogan {
       font-size: 1.3em;
-      margin-bottom: 2.5em;
-      font-weight: 400;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      margin-bottom: 2em;
+      color: #555;
+      text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
+      max-width: 600px;
+      text-align: center;
     }
 
-    /* Choix accueil */
+    .avertissement-18 {
+      background-color: rgba(255, 234, 234, 0.9);
+      color: #a50000;
+      text-align: center;
+      padding: 1em;
+      font-size: 1.1em;
+      border-bottom: 2px solid #a50000;
+      font-weight: 600;
+      max-width: 700px;
+      margin-bottom: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #a50000aa;
+    }
+
     .choice-container {
       display: flex;
       gap: 2em;
       flex-wrap: wrap;
       justify-content: center;
       margin-bottom: 3em;
+      max-width: 900px;
+      width: 100%;
     }
 
     .choice {
       width: 280px;
-      height: 220px;
-      border-radius: 14px;
+      height: 230px;
+      border-radius: 16px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
-
-    .choice:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.55);
-    }
-
-    .love {
-      background: #ffeef2;
-      color: #d13a6f;
-    }
-
-    .hot {
-      background: #2b2b4f;
-      color: #fff;
-    }
-
-    .choice h2 {
-      margin: 0;
-      font-size: 1.6em;
-      user-select: none;
-    }
-
-    .choice p {
-      margin-top: 0.7em;
-      font-size: 1.1em;
-      padding: 0 1.2em;
-      user-select: none;
-    }
-
-    /* Abonnements */
-    .abonnement-container {
-      background: rgba(255, 255, 255, 0.85);
-      color: #333;
-      border-radius
